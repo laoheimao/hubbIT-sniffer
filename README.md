@@ -15,7 +15,7 @@ First you need to setup the required interface. Fortunately there is script prov
 # scripts/setup-hubbit-iface.sh
 ```
 
-After that you only need to start the *hubbit-sniffer*:
+After that you only need to start the *hubbit-sniffer* (you need to be a member of the wireshark group in order to be able to run the sniffer without being root):
 ```
 $ screen -S hubbit-sniffer -U
 $ python3 sniffer/sniffer.py -a api_key_goes_here -b sniffer/blacklist.txt
