@@ -1,3 +1,4 @@
+from sys import stderr
 from enum import Enum
 
 
@@ -18,7 +19,9 @@ class Blacklist:
         try:
             with open(self.blacklist_file) as f:
                 content = f.readlines()
-        except IOError:
+        except IOError as e:
+            print("[WARNING] Unable to read blacklist:\n{}".format(e),
+                  file=stderr)
             return []
         return [x.strip().lower() for x in content]
 
