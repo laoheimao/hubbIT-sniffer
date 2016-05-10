@@ -1,0 +1,12 @@
+[Unit]
+Description=hubbIT-interface
+
+[Service]
+User=root
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/opt/digit/hubbIT-sniffer/scripts/setup-hubbit-iface.sh %I
+WorkingDirectory=/opt/digit/hubbIT-sniffer/
+
+[Install]
+WantedBy=multi-user.target

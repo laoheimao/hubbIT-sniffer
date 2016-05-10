@@ -1,0 +1,14 @@
+[Unit]
+Description=hubbIT-sniffer
+Requires=network-online.target
+Requires=hubbIT-interface@%I.service
+
+[Service]
+User=digit
+Type=forking
+ExecStart=/usr/bin/screen -dmS hubbit-%I-sniffer /opt/digit/hubbIT-sniffer/start-sniffer.sh %I
+ExecStop=/usr/bin/screen -S hubbit-%I-sniffer -X quit
+WorkingDirectory=/opt/digit/hubbIT-sniffer/
+
+[Install]
+WantedBy=multi-user.target
