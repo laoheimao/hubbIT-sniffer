@@ -2,10 +2,9 @@
 Description=hubbIT-interface
 
 [Service]
-User=root
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/opt/digit/hubbIT-sniffer/scripts/setup-hubbit-iface.sh %I
+ExecStart=/opt/digit/hubbIT-sniffer/scripts/setup-hubbit-iface.sh %i
 WorkingDirectory=/opt/digit/hubbIT-sniffer/
 
 [Install]
