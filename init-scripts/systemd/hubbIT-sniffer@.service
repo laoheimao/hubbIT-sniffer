@@ -4,10 +4,7 @@ Requires=hubbIT-interface@%i.service
 After=hubbIT-interface@%i.service
 
 [Service]
-User=digit
-Type=forking
-ExecStart=/usr/bin/screen -dmS hubbit-%i-sniffer /opt/digit/hubbIT-sniffer/start-sniffer.sh %i
-ExecStop=/usr/bin/screen -S hubbit-%i-sniffer -X quit
+ExecStart=/opt/digit/hubbIT-sniffer/start-sniffer.sh %i
 WorkingDirectory=/opt/digit/hubbIT-sniffer/
 Restart=always
 RestartSec=30

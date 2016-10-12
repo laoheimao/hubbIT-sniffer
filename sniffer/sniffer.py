@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # This is the application that sends MAC-addresses to the hubbIT server
 
 import reqs
@@ -120,7 +121,7 @@ class Main:
                     print("[{}] {:2} -> {} -> {}{} {}{}"
                           .format(time.strftime("%F %T"),
                                   len(macs), self._url, color, status_code,
-                                  reason, reset))
+                                  reason, reset), flush=True)
             self._storage.clear()
             self._cap.join()
 
